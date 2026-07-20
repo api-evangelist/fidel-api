@@ -1,0 +1,22 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.fidelapi.com/docs/select (Getting Started - Managing API Keys)
+docs: https://reference.fidel.uk/
+summary:
+  types: [apiKey]
+  api_key_in: [header]
+  oauth2_flows: []
+schemes:
+  - name: FidelKey
+    type: apiKey
+    in: header
+    parameter_name: Fidel-Key
+    description: >-
+      All Fidel API requests authenticate with a secret API key passed in the
+      Fidel-Key HTTP header. Keys are environment-scoped: Test keys access the
+      test environment and Live keys access the live environment. There are two
+      key classes - API keys (server-side, direct REST API access) and SDK keys
+      (used to link the Web/iOS/Android/React Native SDKs to your account).
+      Keys are created, viewed, and revoked in the Fidel Dashboard under
+      Account Settings > Plan.
+    sources: [docs.fidelapi.com]
