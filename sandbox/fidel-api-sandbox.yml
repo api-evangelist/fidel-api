@@ -1,0 +1,33 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.fidelapi.com/docs/select (Test Card Numbers, Getting Started)
+environments:
+  separation: key-scoped
+  modes: [test, live]
+  detail: >-
+    Environment is selected by which key is used. Test keys (API keys and SDK
+    keys) operate against the test environment; Live keys against production.
+    The Dashboard has a Live Mode toggle (bottom-left) to switch between test
+    and live keys. The test environment does not accept live card numbers.
+  signup: https://dashboard.fidel.uk/sign-up
+  playground: https://dashboard.fidel.uk/playground
+test_cards:
+  note: >-
+    Verbatim from Fidel docs. Test cards work in the Dashboard Playground, with
+    the Fidel SDKs, and with the Fidel Cards API in the test environment.
+  visa_pattern: '4444000000004***'
+  visa_pattern_detail: Any digits may replace the trailing asterisks (e.g. 4444000000004278, 4444000000004222).
+  examples:
+    - scheme: visa
+      number: '4444000000004278'
+    - scheme: visa
+      number: '4242424242424242'
+    - scheme: mastercard
+      number: '5555555555554444'
+  card_input:
+    expiry: any future date
+    countryCode: three-letter ISO country code
+    termsOfUse: 'true (simulates cardholder opt-in)'
+notes:
+  - Test transactions never populate cardPresent (always null in test mode).
+  - Fidel bills on transaction events; both auth and clearing events are processed.

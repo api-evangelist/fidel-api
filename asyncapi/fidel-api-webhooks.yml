@@ -1,0 +1,75 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.fidelapi.com/docs/select (Webhooks) + https://reference.fidel.uk/reference/create-webhook-program
+type: Webhooks
+transport: https-post-json
+signature: A signature header is included on every webhook POST for verification.
+delivery:
+  format: HTTP POST, JSON body containing the event object as payload
+  ack: Respond 200 OK within 20 seconds
+  retries: 'Up to 2 retries (3 attempts total): 1-minute wait before 2nd, 2-minute wait before 3rd'
+  fan_out: Up to 10 webhook URLs may be registered per event type per program
+  custom_headers: Custom HTTP headers can be attached per registered webhook URL
+management:
+  api:
+    brand_hooks: https://api.fidel.uk/v1/hooks
+    program_hooks: https://api.fidel.uk/v1/programs/{programId}/hooks
+  dashboard: https://dashboard.fidel.uk/webhooks
+webhook_types:
+  - name: brand
+    requires: [url]
+    scope: Registered against a brand (only a URL required)
+    events: [brand.consent]
+  - name: program
+    requires: [programId, url]
+    scope: Registered against a program
+    events:
+      - card.linked
+      - card.failed
+      - program.status
+      - location.status
+      - transaction.auth
+      - transaction.auth.qualified
+      - transaction.clearing
+      - transaction.clearing.qualified
+      - transaction.refund
+      - transaction.refund.qualified
+events:
+  - event: brand.consent
+    description: Brand consent status update.
+  - event: card.linked
+    description: A card was successfully linked to a program.
+  - event: card.failed
+    description: A card link attempt failed.
+  - event: program.status
+    description: Program status changed.
+  - event: location.status
+    description: Location (participating store) status changed.
+  - event: transaction.auth
+    description: A transaction authorization event was received in real time.
+  - event: transaction.auth.qualified
+    description: An authorization that qualified for an offer/program rule.
+  - event: transaction.clearing
+    description: A transaction clearing event was received.
+  - event: transaction.clearing.qualified
+    description: A clearing event that qualified for an offer/program rule.
+  - event: transaction.refund
+    description: A refund event was received.
+  - event: transaction.refund.qualified
+    description: A refund event that qualified for an offer/program rule.
+  - event: transaction.refund.match.qualified
+    description: A refund matched to a qualified transaction.
+  - event: location.status
+    description: Location status changed.
+  - event: marketplace.offer.live
+    description: A marketplace offer went live.
+  - event: marketplace.offer.updated
+    description: A marketplace offer was updated.
+  - event: mid-request.succeeded
+    description: A Merchant ID (MID) request succeeded.
+  - event: mid-request.failed
+    description: A Merchant ID (MID) request failed.
+  - event: missing-transaction-request.succeeded
+    description: A missing-transaction request succeeded.
+  - event: missing-transaction-request.failed
+    description: A missing-transaction request failed.

@@ -1,0 +1,24 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.fidelapi.com/docs/select (SDKs / Cards API PCI notes)
+standards:
+  - id: pci-dss
+    conforms: true
+    evidence: >-
+      Fidel operates PCI-compliant card-capture SDKs (Web/iOS/Android/React
+      Native) that tokenize card numbers so customer servers never touch
+      sensitive card data; direct use of the Cards API requires the integrator
+      to be PCI compliant. Fidel states it manages the PCI compliance
+      requirements on behalf of SDK integrators.
+  - id: oauth2
+    conforms: false
+    evidence: API uses the Fidel-Key API-key header, not OAuth2.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: No application/problem+json error contract is documented.
+compliance_program:
+  published: true
+  standards: [PCI DSS]
+  note: >-
+    Fidel processes tokenized Visa, Mastercard and Amex card data and positions
+    PCI DSS compliance as a core part of the SDK-based integration model.

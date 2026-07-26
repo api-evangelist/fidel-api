@@ -1,0 +1,29 @@
+generated: '2026-07-19'
+method: probed
+host: https://fidelapi.com
+note: >-
+  Every /.well-known/ path returns HTTP 200 but with Content-Type text/html -
+  the site's Gatsby SPA catch-all serves the app shell for unknown paths, not a
+  real discovery document. No genuine well-known documents are published; the
+  200 status is a false positive from the SPA fallback. Recorded as absence.
+documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/html
+    real: false
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: text/html
+    real: false
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: text/html
+    real: false
+  - path: /.well-known/api-catalog
+    status: 200
+    content_type: text/html
+    real: false
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    content_type: text/html
+    real: false

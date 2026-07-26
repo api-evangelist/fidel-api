@@ -1,0 +1,33 @@
+# Fidel API
+
+> Fidel API is a global card-linking platform. One API links Visa, Mastercard and Amex payment cards to web and mobile applications and streams enriched, real-time transaction data (authorization, clearing, refund) from the card networks via webhooks. Used for card-linked loyalty, rewards, and offers. Base URL: https://api.fidel.uk/v1. Authentication: the Fidel-Key API-key header (test and live keys).
+
+## APIs
+- [Fidel API Reference](https://reference.fidel.uk/): All requests, code examples, and response payloads (Programs, Brands, Cards, Transactions, Locations, Offers, Webhooks, MIDs).
+- [Getting Started](https://docs.fidelapi.com/docs/select): Accounts, API/SDK keys, test vs live environments.
+
+## Docs
+- [Documentation](https://docs.fidelapi.com/): Full developer documentation (Select card-linking and OaaS Offers-as-a-Service).
+- [Card-Linking Tutorial](https://fidelapi.com/docs/tutorials/card-linking): End-to-end card-linking walkthrough.
+- [Web SDK v3](https://resources.fidel.uk/sdk/js/v3/fidel.js): Hosted PCI-compliant card-capture UI.
+
+## Artifacts (API Evangelist enrichment)
+- [Authentication](authentication/fidel-api-authentication.yml): Fidel-Key API-key header, test/live + API/SDK key classes.
+- [Webhooks](asyncapi/fidel-api-webhooks.yml): 18 event types (transaction.auth/clearing/refund, card.linked, brand.consent, ...), signed POST delivery, retry semantics.
+- [Conventions](conventions/fidel-api-conventions.yml): Base URL, versioning, error handling, resource list.
+- [Sandbox](sandbox/fidel-api-sandbox.yml): Test cards and test/live key separation.
+- [Data Model](data-model/fidel-api-data-model.yml): Program/Brand/Location/Card/Transaction/Offer/Webhook entity graph.
+- [Lifecycle](lifecycle/fidel-api-lifecycle.yml): Versioning, status page, changelog.
+- [Changelog](changelog/fidel-api-changelog.yml): Recent release notes.
+- [Packages / SDKs](packages/fidel-api-packages.yml): Web, iOS, Android, React Native SDKs.
+- [Conformance](conformance/fidel-api-conformance.yml): PCI DSS posture.
+- [Components](components/fidel-api-components.yml): Embeddable secure card-capture UI.
+
+## Operations
+- [Developer Dashboard](https://dashboard.fidel.uk/): Manage programs, keys, cards, webhooks; Playground.
+- [Sign Up](https://dashboard.fidel.uk/sign-up): Create a developer account.
+- [Status](https://status.fidel.uk/): Statuspage.io service status.
+- [Release Notes](https://releasenotes.fidel.uk/): Dated changelog.
+- [Pricing](https://fidelapi.com/pricing): Plans.
+- [Blog](https://fidelapi.com/blog/): Product and engineering posts.
+- [GitHub (SDK org)](https://github.com/Enigmatic-Smile): Official SDK repositories.

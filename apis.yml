@@ -1,27 +1,133 @@
 aid: fidel-api
 name: FIDEL API
-description: 'FIDEL API is a company surfaced as a portfolio company of bain-capital-ventures and added
-  to the API Evangelist network as a stub for enrichment. Sector: fintech. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: >-
+  Fidel API is a global card-linking platform that connects Visa, Mastercard and
+  Amex payment cards to web and mobile applications through a single API. Once a
+  cardholder links a card (via Fidel's PCI-compliant Web, iOS, Android or React
+  Native SDKs), Fidel streams enriched, real-time transaction data - authorization,
+  clearing and refund events - from the card networks to the developer's server via
+  signed webhooks. Developers use it to build card-linked loyalty, rewards, cashback
+  and offers programs without handling raw card data or PCI scope. The platform
+  spans Programs, Brands, Locations, Cards, Transactions, Offers and Merchant IDs,
+  operates test and live environments, and is available across the US, UK, Ireland,
+  Canada, Sweden and the UAE (with Japan in beta). Founded in 2018 and headquartered
+  in London, Fidel is backed by Bain Capital Ventures.
 url: https://raw.githubusercontent.com/api-evangelist/fidel-api/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - bain-capital-ventures
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: enriched
+x-tier-reason: portfolio-lead-enriched
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
+image: https://fidelapi.com/fidel_social.png
 tags:
 - Company
 - Fintech
-apis: []
+- Card Linking
+- Payments
+- Transactions
+- Webhooks
+- SDK
+- Card-Linked Offers
+- Financial Data
+apis:
+- name: Fidel API
+  description: >-
+    Card-linking REST API for linking Visa/Mastercard/Amex cards to programs and
+    receiving real-time transaction events (Programs, Brands, Cards, Transactions,
+    Locations, Offers, Webhooks, MIDs).
+  humanURL: https://docs.fidelapi.com/docs/select
+  baseURL: https://api.fidel.uk/v1
+  tags:
+  - Card Linking
+  - Payments
+  - Transactions
+  properties:
+  - type: Documentation
+    url: https://docs.fidelapi.com/
+  - type: APIReference
+    url: https://reference.fidel.uk/
+  - type: Authentication
+    url: authentication/fidel-api-authentication.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/fidel-api-domain-security.yml
 - type: Website
   url: https://fidelapi.com/
+- type: DeveloperPortal
+  url: https://dashboard.fidel.uk/
+- type: Documentation
+  url: https://docs.fidelapi.com/
+- type: APIReference
+  url: https://reference.fidel.uk/
+- type: GettingStarted
+  url: https://docs.fidelapi.com/docs/select
+- type: Support
+  url: https://community.fidel.uk/
+- type: Blog
+  url: https://fidelapi.com/blog/
+- type: GitHubOrganization
+  url: https://github.com/Enigmatic-Smile
+- type: Pricing
+  url: https://fidelapi.com/pricing
+- type: SignUp
+  url: https://dashboard.fidel.uk/sign-up
+- type: Login
+  url: https://dashboard.fidel.uk/
+- type: TermsOfService
+  url: https://fidelapi.com/terms
+- type: PrivacyPolicy
+  url: https://fidelapi.com/privacy
+- type: StatusPage
+  url: https://status.fidel.uk/
+- type: Authentication
+  url: authentication/fidel-api-authentication.yml
+- type: Packages
+  url: packages/fidel-api-packages.yml
+- type: SDKs
+  url: packages/fidel-api-packages.yml
+- type: Sandbox
+  url: sandbox/fidel-api-sandbox.yml
+- type: Webhooks
+  url: asyncapi/fidel-api-webhooks.yml
+- type: Conventions
+  url: conventions/fidel-api-conventions.yml
+- type: Lifecycle
+  url: lifecycle/fidel-api-lifecycle.yml
+- type: ChangeLog
+  url: changelog/fidel-api-changelog.yml
+- type: Conformance
+  url: conformance/fidel-api-conformance.yml
+- type: Compliance
+  url: https://docs.fidelapi.com/docs/select
+- type: Components
+  url: components/fidel-api-components.yml
+- type: DataModel
+  url: data-model/fidel-api-data-model.yml
+- type: LLMsTxt
+  url: llms/fidel-api-llms.txt
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

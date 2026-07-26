@@ -1,0 +1,42 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.fidelapi.com/docs/select + npm/CocoaPods/GitHub registries
+packages:
+  - language: javascript
+    registry: cdn
+    name: fidel-web-sdk-v3
+    url: https://resources.fidel.uk/sdk/js/v3/fidel.js
+    install: '<script src="https://resources.fidel.uk/sdk/js/v3/fidel.js"></script>'
+    official: true
+    notes: First-party hosted Web (JavaScript) SDK v3 that renders the PCI-compliant secure card-capture UI.
+  - language: swift-objc
+    registry: cocoapods
+    name: Fidel
+    url: https://cocoapods.org/pods/Fidel
+    install: pod 'Fidel'
+    official: true
+    source_repo: https://github.com/Enigmatic-Smile/fidel-ios
+    notes: First-party iOS SDK (Fidel's SDK org is Enigmatic-Smile).
+  - language: kotlin-java
+    registry: github
+    name: fidel-android
+    url: https://github.com/Enigmatic-Smile/fidel-android
+    install: See repo Gradle instructions
+    official: true
+    notes: First-party Android SDK.
+  - language: javascript
+    registry: npm
+    name: fidel-react-native
+    url: https://www.npmjs.com/package/fidel-react-native
+    install: npm install fidel-react-native
+    official: true
+    source_repo: https://github.com/Enigmatic-Smile/rn-sdk
+    notes: 'First-party React Native bridge (author: Fidel <developer@fidel.uk>). Latest 3.2.0.'
+  - language: javascript
+    registry: github
+    name: cordova-plugin-fidel
+    url: https://github.com/Enigmatic-Smile/cordova-plugin-fidel
+    install: cordova plugin add cordova-plugin-fidel
+    official: true
+    deprecated: true
+    notes: Archived first-party Cordova plugin (no longer maintained).

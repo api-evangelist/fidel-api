@@ -1,0 +1,79 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.fidelapi.com/docs/select (Programs, Brands, Cards, Transactions, Webhooks object references)
+note: >-
+  Derived from Fidel's documented object references (no OpenAPI is published, so
+  relationships are read from the documented fields on each object rather than
+  from spec $refs).
+entities:
+  - name: Program
+    description: A card-linked program that cards are linked to and that brands/locations participate in.
+    id_field: id
+  - name: Brand
+    description: A merchant brand whose locations generate qualifying transactions.
+    id_field: id
+  - name: Location
+    description: A physical/online location belonging to a brand and participating in a program.
+    id_field: id
+  - name: Card
+    description: A tokenized payment card (Visa/Mastercard/Amex) linked to a program.
+    id_field: id
+    key_fields: [firstNumbers, lastNumbers, scheme, metadata]
+  - name: Transaction
+    description: A real-time auth/clearing/refund event captured on a linked card at a participating location.
+    id_field: id
+    key_fields: [auth, cleared, authCode, cardId, amount]
+  - name: Offer
+    description: A card-linked offer (cashback/reward) attached to a program/brand.
+    id_field: id
+  - name: Webhook
+    description: A registered brand- or program-scoped HTTP endpoint receiving events.
+    id_field: id
+    alias: hook
+  - name: MID
+    description: A Merchant ID mapping used to attribute transactions to brands/locations.
+relationships:
+  - from: Card
+    to: Program
+    type: belongs_to
+    via: programId
+  - from: Location
+    to: Brand
+    type: belongs_to
+    via: brand.id
+  - from: Location
+    to: Program
+    type: belongs_to
+    via: programId
+  - from: Transaction
+    to: Card
+    type: belongs_to
+    via: cardId
+  - from: Transaction
+    to: Brand
+    type: belongs_to
+    via: brand.id
+  - from: Transaction
+    to: Location
+    type: belongs_to
+    via: location
+  - from: Transaction
+    to: Offer
+    type: belongs_to
+    via: offer
+  - from: Offer
+    to: Brand
+    type: belongs_to
+    via: brandId
+  - from: Webhook
+    to: Program
+    type: belongs_to
+    via: programId
+  - from: Program
+    to: Card
+    type: has_many
+    via: cards
+  - from: Program
+    to: Transaction
+    type: has_many
+    via: transactions

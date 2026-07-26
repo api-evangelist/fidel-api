@@ -1,0 +1,42 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.fidelapi.com/docs/select + https://reference.fidel.uk/
+base_url: https://api.fidel.uk/v1
+authentication:
+  style: api-key-header
+  header: Fidel-Key
+  ref: authentication/fidel-api-authentication.yml
+content_type: application/json
+versioning:
+  scheme: uri-path
+  current: v1
+  detail: Version is pinned in the request path (https://api.fidel.uk/v1/...).
+idempotency:
+  supported: false
+  detail: No idempotency-key header or parameter is documented in the Fidel API reference.
+pagination:
+  documented: false
+  detail: A general pagination contract is not published in the reviewed docs; some list/offer endpoints accept sorting and filtering query parameters.
+webhooks:
+  ref: asyncapi/fidel-api-webhooks.yml
+  signature_verification: A signature header is sent on each webhook POST for verification.
+  ack: Return 200 OK within 20s; up to 3 delivery attempts.
+error_handling:
+  detail: >-
+    Failed requests (e.g. a failed card link) return an error object in the
+    response body; successful card links return the Card object.
+  catalog: See reference.fidel.uk for per-endpoint HTTP status codes.
+resources:
+  - programs
+  - brands
+  - cards
+  - transactions
+  - locations
+  - offers
+  - hooks (webhooks)
+  - mids (merchant IDs)
+cross_links:
+  authentication: authentication/fidel-api-authentication.yml
+  webhooks: asyncapi/fidel-api-webhooks.yml
+  lifecycle: lifecycle/fidel-api-lifecycle.yml
+  data_model: data-model/fidel-api-data-model.yml

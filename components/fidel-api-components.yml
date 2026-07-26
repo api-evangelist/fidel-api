@@ -1,0 +1,35 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.fidelapi.com/docs/select (SDKs - Web/iOS/Android/React Native)
+summary: >-
+  Fidel ships client-side, embeddable card-capture UI components (not just
+  server SDKs). They render a PCI-compliant secure form/modal that collects the
+  cardholder's card details in the client and sends them directly to Fidel over
+  a secure connection, returning a tokenized card id - so the integrator's
+  servers never handle raw card numbers.
+families:
+  - family: web
+    kind: embeddable-card-capture
+    loader: https://resources.fidel.uk/sdk/js/v3/fidel.js
+    version: v3
+    description: JavaScript Web SDK that renders the secure card-entry UI on a website.
+    key_type: SDK key
+  - family: ios
+    kind: mobile-card-capture-ui
+    source_repo: https://github.com/Enigmatic-Smile/fidel-ios
+    package: 'CocoaPods: Fidel'
+    guide: https://docs.fidelapi.com (select/sdks/ios/guide-v2)
+    key_type: SDK key
+  - family: android
+    kind: mobile-card-capture-ui
+    source_repo: https://github.com/Enigmatic-Smile/fidel-android
+    guide: https://docs.fidelapi.com (select/sdks/android/guide-v2)
+    key_type: SDK key
+  - family: react-native
+    kind: mobile-card-capture-ui
+    package: 'npm: fidel-react-native'
+    source_repo: https://github.com/Enigmatic-Smile/rn-sdk
+    guide: https://docs.fidelapi.com (select/sdks/react-native/guide-v2)
+    key_type: SDK key
+notes:
+  - Components authenticate with SDK keys (distinct from server API keys) and work in both test and live environments.

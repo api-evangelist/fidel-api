@@ -1,0 +1,31 @@
+generated: '2026-07-19'
+method: searched
+source: https://releasenotes.fidel.uk/
+platform: Headway
+scheme: dated-release-notes
+url: https://releasenotes.fidel.uk/
+entries:
+  - title: Dark mode
+    type: addition
+    highlight: Dashboard supports dark mode with system-preference sync and manual toggle.
+  - title: Bulk MID Upload via CSV
+    type: addition
+    highlight: Onboard, offboard, and reassign up to 250 Merchant IDs (MIDs) per CSV file.
+  - title: 'Enhanced MID-Management: New APIs & Dashboard Tools'
+    type: addition
+    highlight: New API endpoints to list MIDs and create MID requests; upgraded dashboard tracking.
+  - title: Changes to Network-Specific Transaction Data Fields
+    type: breaking
+    highlight: Removed Amex scheme data, network-specific approval codes, and first-six PAN digits from transaction records.
+  - title: Content Provider Offer Approval
+    type: improvement
+    highlight: Dedicated offer-approval dashboard section with batch approval; removed 2FA requirement.
+  - title: Offer Navigation Enhancements
+    type: improvement
+    highlight: Query parameters for sorting and filtering offers across dashboard and API endpoints.
+  - title: Offers Marketplace Navigation
+    type: improvement
+    highlight: Search offers by brand name; improved sorting/filtering; featured offers surfaced.
+  - title: Deprecating maxTransactionAmount in favor of maxRewardAmount
+    type: breaking
+    highlight: Automatic data migration from maxTransactionAmount to maxRewardAmount for offer creation.

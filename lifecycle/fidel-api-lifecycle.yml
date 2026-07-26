@@ -1,0 +1,21 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.fidelapi.com/ + https://status.fidel.uk/ + https://releasenotes.fidel.uk/
+versioning:
+  scheme: uri-path
+  current: v1
+  docs: https://reference.fidel.uk/
+deprecation:
+  policy_url: null
+  observed: >-
+    Fidel does not publish a formal deprecation-policy page, but the release
+    notes practice announced field removals and property deprecations with
+    migration guidance (e.g. deprecating maxTransactionAmount in favor of
+    maxRewardAmount; removal of network-specific transaction data fields).
+  changelog: https://releasenotes.fidel.uk/
+status_page: https://status.fidel.uk/
+status_page_platform: Statuspage.io
+sla:
+  url: null
+  detail: No public SLA / uptime-target page found in the reviewed surface.
+changelog: https://releasenotes.fidel.uk/
