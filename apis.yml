@@ -40,6 +40,16 @@ tags:
 - Fintech
 - Card Linking
 - Payments
+- Transaction
+- Webhook
+- SDK
+- Card-Linked Offers
+- Financial Data
+tags_raw:
+- Company
+- Fintech
+- Card Linking
+- Payments
 - Transactions
 - Webhooks
 - SDK
@@ -54,6 +64,10 @@ apis:
   humanURL: https://docs.fidelapi.com/docs/select
   baseURL: https://api.fidel.uk/v1
   tags:
+  - Card Linking
+  - Payments
+  - Transaction
+  tags_raw:
   - Card Linking
   - Payments
   - Transactions
